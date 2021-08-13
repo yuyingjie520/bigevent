@@ -1,4 +1,5 @@
 $(function() {
+    //表单的切换
     $('#reg').on('click', function() {
         $('.login-box').hide()
         $('.reg-box').show()
@@ -12,16 +13,13 @@ $(function() {
 
 
     //表单验证
-
     var form = layui.form
-    var layer = layui.layer
+    var layer = layui.layer //可直接使用不赋值
+        //verify方法
     form.verify({
         pwd: [
             /^[\S]{6,12}$/, '密码必须6到12位，且不能出现空格'
         ],
-
-
-
         repwd: function(value) {
             var psd = $('.reg-box [name=password]').val()
 
@@ -38,20 +36,19 @@ $(function() {
         $.ajax({
             method: 'post',
             url: '/api/reg',
-            data: {
-                username: $('#reg-form [name=username]').val(),
-                password: $('#reg-form [name=password]').val(),
-                repassword: $('#reg-form [name=repassword]').val()
-            },
+            // data: {
+            //     username: $('#reg-form [name=username]').val(),
+            //     password: $('#reg-form [name=password]').val(),
+            //     repassword: $('#reg-form [name=repassword]').val()
+            // },
+            data: $(this).serialize(),
             success: function(res) {
                 if (res.code !== 0) {
 
                     return layer.msg(res.message)
 
                 }
-
                 layer.msg('注册成功,请登录')
-
                 $('#login').click()
 
             }

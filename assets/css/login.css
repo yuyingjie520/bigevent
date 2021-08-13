@@ -1,0 +1,59 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+    background: url('../../assets/images/login_bg.jpg') no-repeat center;
+    background-size: cover;
+}
+
+
+/* 登录 */
+
+.loginbox {
+    width: 400px;
+    height: 310px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff
+}
+
+.login-hrader {
+    height: 60px;
+    background: url('../../assets/images/login_title.png') no-repeat center
+}
+
+.reg-box {
+    display: none
+}
+
+.layui-form {
+    padding: 0 30px;
+}
+
+.layui-form-item {
+    display: flex;
+    justify-content: flex-end
+}
+
+.layui-form-item {
+    position: relative;
+}
+
+.layui-icon {
+    position: absolute;
+    left: 8px;
+    top: 12px
+}
+
+.layui-input {
+    padding-left: 30px
+}
+
+.layui-form-item a {
+    font-size: 12px
+}

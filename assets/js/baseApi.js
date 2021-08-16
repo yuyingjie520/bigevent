@@ -12,8 +12,8 @@ $(function() {
         }
 
         options.complete = function(res) {
-            console.log(res);
-            if (res.responseJSON.code === 1 && res.responseJSON.message === '身份验证失败！') {
+            // console.log(res);
+            if (res.responseJSON.code === 1) {
                 localStorage.removeItem('token');
                 location.href = 'login.html'
             }
